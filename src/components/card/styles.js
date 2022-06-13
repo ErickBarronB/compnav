@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../../constants/colors";
 
 export const styles = StyleSheet.create({
 
@@ -7,14 +8,16 @@ export const styles = StyleSheet.create({
         maxWidth: "80%",
         alignItems: "center",
         justifyContent: "center",
-        padding: 20,
+        padding: 10,
         shadowColor: "black",
         shadowOffset: {width: 0, height: 2},
         shadowRadius: 6,
         shadowOpacity: 0.26,
         elevation: 6,
         borderRadius: 10,
-        backgroundColor: "#ffff",
+        backgroundColor: colors.white,
+        marginBottom: 10,
+
     },
 
 

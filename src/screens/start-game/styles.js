@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import colors from "../../constants/colors";
 
 export const styles = StyleSheet.create({
-    container: {
+    containerTouchable: {
         flex: 1,
         backgroundColor: colors.white,
         alignItems: "center",
@@ -30,11 +30,26 @@ export const styles = StyleSheet.create({
         padding: 20,
         paddingHorizontal: 25,
 
-    
+
+    },
+
+    container: {
+        flex: 1,
+        alignItems: "center",
     },
 
     button: {
         width: 100,
+
+    },
+
+    summaryContainer: {
+        marginVertical: 20,
+        alignItems: "center",
+    },
+
+    subtitle: {
+    fontSize: 20,
     },
 
 

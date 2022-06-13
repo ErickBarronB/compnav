@@ -6,11 +6,16 @@ import react, { useState } from "react";
 import colors from "../../constants/colors"
 import { styles } from "./styles"
 
-const StartGame = ()=> {
+const StartGame = ({onStartGame})=> {
 
     const [SelectedNumber, setSelectedNumber] = useState("");
     const [confirmed, setconfirmed] = useState(false);
     const [enteredValue, setEnteredValue] = useState("");
+
+    const handlerClearInput = () =>{
+    setEnteredValue("");
+    setconfirmed(false);
+    };
 
     const handlerConfirmInput = () => {
         const choseNumber = parseInt(enteredValue);
@@ -29,23 +34,22 @@ const StartGame = ()=> {
         if (confirmed) {
             confirmedOutput = (
                 <Card style={styles.summaryContainer}>
-                    <Text>Tu seleccion: </Text>
+                    <Text style={styles.subtitle}>Tu seleccion: </Text>
                     <numberContainer>{SelectedNumber}</numberContainer>
-                    <View style={styles.buttonContainer}>
-                    <button title="Empezar Juego"/>
-                    </View>
+                    <Button title="Empezar Juego"
+                    color={colors.secondary} 
+                    onPress={() => onStartGame(SelectedNumber)}/>
                 </Card>
 
             )
         }
     return (
-        <TouchableWithoutFeedback style={styles.container}
+        <TouchableWithoutFeedback style={styles.containerTouchable}
         onPress={() => {
             Keyboard.dismiss();
         }}>
-    
+
         <View style={styles.container}>
-            <Header title="Bienvenidos"/>
             <Text style={styles.title}>Comenzar Juego</Text>
             <Card style={styles.inputContainer}>
                 <Text>Elija el numero</Text>
@@ -61,7 +65,7 @@ const StartGame = ()=> {
                 />
                 <View  style={styles.buttonContainer}>
                 <View style={styles.button}>
-                <Button title="limpiar" onPress={() => null} color={colors.secondary}/>
+                <Button title="limpiar" onPress={() => handlerClearInput()} color={colors.secondary}/>
                 </View>
 
                 <View style={styles.button}>

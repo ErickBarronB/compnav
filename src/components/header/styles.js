@@ -16,5 +16,6 @@ export const styles = StyleSheet.create({
     title: {
         color: colors.textColorPrimary,
         fontSize: 22,
+        fontFamily: "openSansBold",
     },
 });
