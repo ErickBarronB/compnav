@@ -1,5 +1,5 @@
 import { Button, TextInput, } from "react-native";
-import { Card, Header, Input, numberContainer } from "../../components/index"
+import { Card, Header, Input, NumberContainer } from "../../components/index"
 import { Keyboard, Text, TouchableWithoutFeedback, View } from "react-native";
 import react, { useState } from "react";
 
@@ -35,9 +35,9 @@ const StartGame = ({onStartGame})=> {
             confirmedOutput = (
                 <Card style={styles.summaryContainer}>
                     <Text style={styles.subtitle}>Tu seleccion: </Text>
-                    <numberContainer>{SelectedNumber}</numberContainer>
+                    <NumberContainer>{SelectedNumber}</NumberContainer>
                     <Button title="Empezar Juego"
-                    color={colors.secondary} 
+                    color={colors.secondary}
                     onPress={() => onStartGame(SelectedNumber)}/>
                 </Card>
 

@@ -12,4 +12,4 @@ const NumberContainer = ({ children, style }) => {
     );
 };
 
-export default numberContainer;
+export default NumberContainer;
